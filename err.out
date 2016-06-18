@@ -1,0 +1,123 @@
+Running main() from gtest_main.cc
+[==========] Running 57 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 57 tests from correctness
+[ RUN      ] correctness.two_plus_two
+[       OK ] correctness.two_plus_two (0 ms)
+[ RUN      ] correctness.default_ctor
+[       OK ] correctness.default_ctor (0 ms)
+[ RUN      ] correctness.copy_ctor
+[       OK ] correctness.copy_ctor (0 ms)
+[ RUN      ] correctness.copy_ctor_real_copy
+[       OK ] correctness.copy_ctor_real_copy (0 ms)
+[ RUN      ] correctness.copy_ctor_real_copy2
+[       OK ] correctness.copy_ctor_real_copy2 (0 ms)
+[ RUN      ] correctness.assignment_operator
+[       OK ] correctness.assignment_operator (0 ms)
+[ RUN      ] correctness.self_assignment
+[       OK ] correctness.self_assignment (0 ms)
+[ RUN      ] correctness.assignment_return_value
+[       OK ] correctness.assignment_return_value (0 ms)
+[ RUN      ] correctness.comparisons
+[       OK ] correctness.comparisons (0 ms)
+[ RUN      ] correctness.compare_zero_and_minus_zero
+[       OK ] correctness.compare_zero_and_minus_zero (0 ms)
+[ RUN      ] correctness.add
+[       OK ] correctness.add (0 ms)
+[ RUN      ] correctness.add_signed
+[       OK ] correctness.add_signed (0 ms)
+[ RUN      ] correctness.add_return_value
+[       OK ] correctness.add_return_value (0 ms)
+[ RUN      ] correctness.sub
+[       OK ] correctness.sub (0 ms)
+[ RUN      ] correctness.sub_signed
+[       OK ] correctness.sub_signed (0 ms)
+[ RUN      ] correctness.sub_return_value
+[       OK ] correctness.sub_return_value (0 ms)
+[ RUN      ] correctness.mul
+[       OK ] correctness.mul (0 ms)
+[ RUN      ] correctness.mul_signed
+[       OK ] correctness.mul_signed (0 ms)
+[ RUN      ] correctness.mul_return_value
+[       OK ] correctness.mul_return_value (0 ms)
+[ RUN      ] correctness.div_
+[       OK ] correctness.div_ (0 ms)
+[ RUN      ] correctness.div_signed
+[       OK ] correctness.div_signed (0 ms)
+[ RUN      ] correctness.div_rounding
+[       OK ] correctness.div_rounding (0 ms)
+[ RUN      ] correctness.div_rounding_negative
+[       OK ] correctness.div_rounding_negative (0 ms)
+[ RUN      ] correctness.div_return_value
+[       OK ] correctness.div_return_value (0 ms)
+[ RUN      ] correctness.unary_plus
+[       OK ] correctness.unary_plus (0 ms)
+[ RUN      ] correctness.negation
+[       OK ] correctness.negation (0 ms)
+[ RUN      ] correctness.and_
+[       OK ] correctness.and_ (0 ms)
+[ RUN      ] correctness.and_signed
+[       OK ] correctness.and_signed (0 ms)
+[ RUN      ] correctness.and_return_value
+[       OK ] correctness.and_return_value (0 ms)
+[ RUN      ] correctness.or_
+[       OK ] correctness.or_ (0 ms)
+[ RUN      ] correctness.or_signed
+[       OK ] correctness.or_signed (0 ms)
+[ RUN      ] correctness.or_return_value
+[       OK ] correctness.or_return_value (0 ms)
+[ RUN      ] correctness.xor_
+[       OK ] correctness.xor_ (0 ms)
+[ RUN      ] correctness.xor_signed
+[       OK ] correctness.xor_signed (0 ms)
+[ RUN      ] correctness.xor_return_value
+[       OK ] correctness.xor_return_value (0 ms)
+[ RUN      ] correctness.not_
+[       OK ] correctness.not_ (0 ms)
+[ RUN      ] correctness.shl_
+[       OK ] correctness.shl_ (0 ms)
+[ RUN      ] correctness.shl_return_value
+[       OK ] correctness.shl_return_value (0 ms)
+[ RUN      ] correctness.shr_
+[       OK ] correctness.shr_ (0 ms)
+[ RUN      ] correctness.shr_signed
+[       OK ] correctness.shr_signed (0 ms)
+[ RUN      ] correctness.shr_return_value
+[       OK ] correctness.shr_return_value (0 ms)
+[ RUN      ] correctness.add_long
+[       OK ] correctness.add_long (0 ms)
+[ RUN      ] correctness.add_long_signed
+[       OK ] correctness.add_long_signed (0 ms)
+[ RUN      ] correctness.add_long_signed2
+[       OK ] correctness.add_long_signed2 (0 ms)
+[ RUN      ] correctness.add_long_pow2
+[       OK ] correctness.add_long_pow2 (0 ms)
+[ RUN      ] correctness.sub_long
+[       OK ] correctness.sub_long (0 ms)
+[ RUN      ] correctness.mul_long
+[       OK ] correctness.mul_long (0 ms)
+[ RUN      ] correctness.mul_long_signed
+[       OK ] correctness.mul_long_signed (0 ms)
+[ RUN      ] correctness.mul_long_signed2
+[       OK ] correctness.mul_long_signed2 (0 ms)
+[ RUN      ] correctness.mul_long_pow2
+[       OK ] correctness.mul_long_pow2 (1 ms)
+[ RUN      ] correctness.div_long
+[       OK ] correctness.div_long (0 ms)
+[ RUN      ] correctness.div_long_signed
+[       OK ] correctness.div_long_signed (0 ms)
+[ RUN      ] correctness.div_long_signed2
+[       OK ] correctness.div_long_signed2 (0 ms)
+[ RUN      ] correctness.negation_long
+[       OK ] correctness.negation_long (0 ms)
+[ RUN      ] correctness.string_conv
+[       OK ] correctness.string_conv (0 ms)
+[ RUN      ] correctness.mul_div_randomized
+[       OK ] correctness.mul_div_randomized (139 ms)
+[ RUN      ] correctness.mul_merge_randomized
+[       OK ] correctness.mul_merge_randomized (17928 ms)
+[----------] 57 tests from correctness (18069 ms total)
+
+[----------] Global test environment tear-down
+[==========] 57 tests from 1 test case ran. (18069 ms total)
+[  PASSED  ] 57 tests.
