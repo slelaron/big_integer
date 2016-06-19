@@ -418,20 +418,9 @@ big_integer& big_integer::operator <<=(int rhs)
 {
 	if (rhs % shift == 0)
 	{
-		int t = rhs / shift;
-		int sz1 = (int)number.size() - t;
-		for (int i = sz1; i < sz1 + t; ++i)
-		{
-			number.push_back(number[i]);
-		}
-		for (int i = sz1 - 1; i >= 0; --i)
-		{
-			number[i + t] = number[i];
-		}
-		for (int i = 0; i < t; ++i)
-		{
-			number[i] = 0;
-		}
+		std::reverse(number.begin(), number.end());
+		number.resize((int)number.size() + rhs / shift, 0);
+		std::reverse(number.begin(), number.end());
 	}
 	else
 	{
@@ -479,20 +468,31 @@ big_integer& big_integer::operator <<=(int rhs)
 
 big_integer& big_integer::operator *=(big_integer const& rhs)
 {
-	big_integer tmp(*this);
-	number.clear();
-	number.push_back(0);
+	big_integer tmp(0);
+	tmp.number.resize(number.size() + rhs.number.size());
+	if (sign == (rhs.sign == POSITIVE)) sign = POSITIVE;
+	else sign = NEGATIVE;
 	for (size_t i = 0; i < rhs.number.size(); ++i)
 	{
-		if (rhs.number[i] != 0)
+		unsigned long long balance = 0;
+		long long rhs1 = rhs.number[i];
+		rhs1 = std::abs(rhs1);
+		for (size_t j = 0; j < number.size(); ++j)
 		{
-			tmp *= (int)rhs.number[i];
-			*this += tmp;
-			tmp /= (int)rhs.number[i];
+			unsigned long long tmp1 = (unsigned long long)number[j] * rhs1 + balance + tmp.number[j + i];
+			tmp.number[j + i] = tmp1 & max_value_good;
+			balance = tmp1 >> shift;
 		}
-		tmp <<= shift;
+		if (balance)
+		{
+			tmp.number[i + number.size()] = balance;
+		}
 	}
-	if (rhs.sign == NEGATIVE) sign = 1 - sign;
+	while (tmp.number[(int)tmp.number.size() - 1] == 0)
+	{
+		tmp.number.pop_back();
+	}
+	number = tmp.number;
 	return *this;
 }
 
@@ -724,3 +724,12 @@ big_integer abs(big_integer a)
 	a.sign = POSITIVE;
 	return a;
 }
+
+/*int main()
+{
+	big_integer a("10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+    big_integer b(                                                     "100000000000000000000000000000000000000");
+    big_integer c("10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+                                                                        "00000000000000000000000000000000000000");
+	std::cout << ((a * b) == c) << "\n" << a * b << "\n" << c << std::endl;
+}*/
